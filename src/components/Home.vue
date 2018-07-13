@@ -1,7 +1,7 @@
 <template>
   <el-row class="container">
     <!--左侧导航-->
-    <el-col :md="3"  style='height: 100%'>
+    <el-col :span="3"  style='height: 100%'>
       <aside :class="{showSidebar:!collapsed}">
         <div class="topbar-logo topbar-btn">
           <a href="/"><img src="../assets/images/logo_zh_CN.png"></a>
@@ -44,11 +44,11 @@
         <!--</el-menu>-->
       </aside>
     </el-col>
-    <el-col :md="21" style='height: 100%'>
+    <el-col :span="21" style='height: 94%;background-color: #f4f4f4'>
       <!--头部-->
       <el-row :span="24" class="topbar-wrap">
-        <div class="ui-header-wrap clearfix J-headerWrap">
-          <div class="feature clearfix">
+        <div class="ui-header-wrap clearfix J-headerWrap" style='margin-left: 9%;margin-right: 5%;'>
+          <el-col :span='16' class="feature clearfix">
             <a href="/" class="link active">全部</a>
             <a href="/" class="link ">联系人</a>
             <a href="/" class="link ">表单</a>
@@ -56,8 +56,8 @@
             <a href="/" class="link ">短信</a>
             <a href="/" class="link ">微信</a>
             <a href="/" class="link ">系统设置</a>
-          </div>
-          <!--<div class="ui-header-other J-headerOther" style="right: 0;">-->
+          </el-col>
+          <el-col :span='8' class="ui-header-other J-headerOther" style="right: 0;">
             <!--<div class="lang-select">-->
               <!--<div class="ui-langSelect J-ui-langSelect">-->
                 <!--<div class="wrap">-->
@@ -75,30 +75,15 @@
               <!--</div>-->
             <!--</div>-->
 
-            <!--<div class="search">-->
-              <!--<div class="ui-search">-->
-                <!--<form class="form J-form" method="get" action="/search">-->
-                  <!--<input id="kw" class="kw" name="search_key" type="text" placeholder="输入关键字搜索文章">-->
-                  <!--<button title="搜索" class="btn btn-submit iconfont-search J-submitBtn" type="submit"></button>-->
-                <!--</form>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        </div>
-        <div class="topbar-account topbar-btn">
-          <el-dropdown trigger="click">
-          <span class="el-dropdown-link userinfo-inner"><i class="iconfont icon-user"></i> {{nickname}}  <i
-            class="iconfont icon-down"></i></span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>
-                <div @click="jumpTo('/user/profile')"><span style="color: #555;font-size: 14px;">个人信息</span></div>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <div @click="jumpTo('/user/changepwd')"><span style="color: #555;font-size: 14px;">修改密码</span></div>
-              </el-dropdown-item>
-              <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+            <div class="search">
+              <div class="ui-search">
+                <form class="form J-form" method="get" action="/search">
+                  <input id="kw" class="kw" name="search_key" type="text" placeholder="输入关键字搜索文章">
+                  <button title="搜索" class="btn btn-submit iconfont-search J-submitBtn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </el-col>
         </div>
       </el-row>
 
@@ -264,14 +249,19 @@
         padding-left: 10px;
       }
     }
+    .margin-beside{
+      margin-right: 20%;
+      margin-left: 8%;
+    }
     .main {
       /*display: -webkit-box;*/
       /*display: -webkit-flex;*/
       /*display: -ms-flexbox;*/
       /*display: flex;*/
       /*position: relative;*/
+      /*background-color: #f4f4f4;*/
       /*top: 50px;*/
-      /*height: 100%;*/
+      height: 100%;
       /*bottom: 0px;*/
       overflow: hidden;
     }
@@ -370,13 +360,13 @@
     }
 
     .content-container {
-      background: #fff;
+      /*background: #f4f4f4;*/
       flex: 1;
-      overflow-y: auto;
+      /*overflow-y: auto;*/
       padding-bottom: 1px;
 
       .content-wrapper {
-        background-color: #f4f4f4;
+        /*background-color: #f4f4f4;*/
         height: 100%;
         width:100%;
         box-sizing: border-box;
