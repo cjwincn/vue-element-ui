@@ -52,17 +52,17 @@ let router = new Router({
         {path: '/user/list', component: UserList, name: '用户列表', menuShow: true}
       ]
     },
-    {
-      path: '/',
-      component: Home,
-      name: '图书管理',
-      menuShow: true,
-      iconCls: 'iconfont icon-books',
-      children: [
-        {path: '/book/list', component: BookList, name: '图书列表', menuShow: true},
-        {path: '/book/category', component: BookCategoryList, name: '图书分类', menuShow: true}
-      ]
-    },
+    // {
+    //   path: '/',
+    //   component: Home,
+    //   name: '图书管理',
+    //   menuShow: true,
+    //   iconCls: 'iconfont icon-books',
+    //   children: [
+    //     {path: '/book/list', component: BookList, name: '图书列表', menuShow: true},
+    //     {path: '/book/category', component: BookCategoryList, name: '图书分类', menuShow: true}
+    //   ]
+    // },
     {
       path: '/',
       component: Home,
